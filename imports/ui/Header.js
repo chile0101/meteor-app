@@ -1,13 +1,19 @@
 import React,{Component} from 'react'
 
+import Register from './Register'
+
+
+
 class Header extends Component{
-    onRegister(event){
-        console.log('clicked')
+    
+    onRegister =  (event)=> {
+        console.log('chile')
     }
 
     render(){
         return(
             <div>
+        
             <div className="container">
                 <div className="header">
                     <div className="row">
@@ -28,7 +34,7 @@ class Header extends Component{
                         </div>
 
                         <div className="col-4 text-right">
-                            <button className="btn-register" onClick={this.onRegister()}>Register</button> 
+                            <button className="btn-register" onClick={this.onRegister}>Register</button> 
                             <button className="btn-login">Log In</button>
                             <a href="#"><img src="./cart/cart.png" className="Cart" /></a>
                             <div className="Oval">7</div>
@@ -58,6 +64,8 @@ class Header extends Component{
                     </li>
                 </ul>     
             </div>
+            <Register/>
+
             </div>
         )
     }

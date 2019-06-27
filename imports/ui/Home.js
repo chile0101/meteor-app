@@ -7,7 +7,7 @@ class Home extends Component{
                 <div className="row">
                     <div className="col-12">
                         <div className="outstanding">
-                            <img src="./slider/slider.png" />
+                            <img src="./slider/slider.jpg" />
                             <h2>OUTFIT OF THE WEEK</h2>
                             <button>Shop Now</button>
                         </div>
@@ -17,7 +17,7 @@ class Home extends Component{
                     <div className="col-3">
                         <div className="cate">
                             <a href="#">
-                            <img src="./products/product2.jfif" />
+                            <img src="./products/IMG_5535_grande.jpg" />
                             <div className="cate-sub ">
                                 <p>Men</p>
                                 <hr />

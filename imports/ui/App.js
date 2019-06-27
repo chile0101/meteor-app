@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withTracker } from 'meteor/react-meteor-data'
-import AccountsUIWrapper from './AccountsUIWrapper.js'
+
 import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
 
 //------------------API------------------------
@@ -15,20 +15,32 @@ import Footer from './Footer'
 import NotFound from './NotFound.js';
 
 class App extends Component{
+  
+  constructor(props){
+    super(props)
+    this.state = {
+      btnRegState: 0,
+      btnLoginState: 0,
+      
+    }
+  }
+  onRegister(){
+
+  }
+
   render(){
     return( 
       <div>
-      <Header/>
-      <Router>
-        <Switch>
-          <Route exact path="/" component = {Home} />
-          <Route component = {NotFound}/>
-        </Switch>
-      </Router>
-      <Footer/>
+        <Header></Header>
         
-        
-        
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route component={NotFound} />
+          </Switch>
+        </Router>
+
+        <Footer></Footer>
       </div>
     )
   }
