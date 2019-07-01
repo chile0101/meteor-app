@@ -11,12 +11,7 @@ import NotFound from '../imports/ui/NotFound.js';
 Meteor.startup(() => {
   
   render((
-    <Router>
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
+   <App/>
   ), document.getElementById('render-target'));
   
 });

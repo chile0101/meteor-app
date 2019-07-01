@@ -7,8 +7,8 @@ class Home extends Component{
                 <div className="row">
                     <div className="col-12">
                         <div className="outstanding">
-                            <img src="./slider/slider.jpg" />
-                            <h2>OUTFIT OF THE WEEK</h2>
+                            <img src="./slider/slider-final.PNG" />
+                            {/* <h2>OUTFIT OF THE WEEK</h2> */}
                             <button>Shop Now</button>
                         </div>
                     </div>
@@ -17,7 +17,7 @@ class Home extends Component{
                     <div className="col-3">
                         <div className="cate">
                             <a href="#">
-                            <img src="./products/IMG_5535_grande.jpg" />
+                            <img src="./products/p1.jpg" />
                             <div className="cate-sub ">
                                 <p>Men</p>
                                 <hr />
@@ -29,7 +29,7 @@ class Home extends Component{
                     <div className="col-3">
                         <div className="cate">
                             <a href="#">
-                            <img src="./products/product2.jfif" />
+                            <img src="./products/p2.jpg" />
                             <div className="cate-sub ">
                                 <p>Men</p>
                                 <hr />
@@ -41,7 +41,7 @@ class Home extends Component{
                     <div className="col-3">
                         <div className="cate">
                             <a href="#">
-                            <img src="./products/product2.jfif" />
+                            <img src="./products/p3.jpg" />
                             <div className="cate-sub ">
                                 <p>Men</p>
                                 <hr />
@@ -53,7 +53,7 @@ class Home extends Component{
                     <div className="col-3">
                         <div className="cate">
                             <a href="#">
-                            <img src="./products/product2.jfif" />
+                            <img src="./products/p4.jpg" />
                             <div className="cate-sub ">
                                 <p>Men</p>
                                 <hr />

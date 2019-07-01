@@ -1,0 +1,29 @@
+.logout{
+    z-index: 9999;
+    position: absolute;
+    top:70px;
+    right: 168px;
+    padding: 8px 0px 12px 0px;
+    box-shadow: 0 14px 30px 0 rgba(0, 0, 0, 0.14);
+    border: solid 0.5px #eaeaea;
+    background-color: #fbfbfb;
+}
+.logout p{
+    /* z-index: 9999; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 13px;
+    padding-right: 64px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    /* line-height: 1.83; */
+    letter-spacing: normal;
+    color: var(--greyish-brown);
+}
+.logout hr{
+    margin-top: 0.8em;
+    margin-bottom: 0.5em;
+}

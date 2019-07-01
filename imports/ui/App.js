@@ -4,10 +4,9 @@ import { withTracker } from 'meteor/react-meteor-data'
 import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
 
 //------------------API------------------------
-import { Tasks } from '../api/tasks.js'
 
 //----------------Component--------------------
-import Task from './Task.js'
+
 import Header from './Header'
 import Home from './Home'
 import Footer from './Footer'
@@ -15,19 +14,6 @@ import Footer from './Footer'
 import NotFound from './NotFound.js';
 
 class App extends Component{
-  
-  constructor(props){
-    super(props)
-    this.state = {
-      btnRegState: 0,
-      btnLoginState: 0,
-      
-    }
-  }
-  onRegister(){
-
-  }
-
   render(){
     return( 
       <div>
