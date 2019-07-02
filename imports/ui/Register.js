@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Accounts } from 'meteor/accounts-base'
 
 
-
 class Register extends Component{
 
     constructor(props) {
@@ -78,33 +77,18 @@ class Register extends Component{
                        }
                         
                    }else{
-                    console.log("account created");
+                        this.props.onSetStateLogin()
                    }
             });
         }else{
             return
         }
     };
-        
-      //  console.log(this.state.errors)
-            // Accounts.createUser({
-            //     username: 'chilevan',
-            //     email: "abcdef@gmail.com",
-            //     password: "123456"
-            //   },function(e){
-            //     console.log(e)   
-            //   });
-
-       
-        // Tasks.insert({
-        // email: this.state.email,
-        // password: this.state.password,
-        // createAt: new Date(),
-        // })
-    
-
     render(){
-       // console.log(this.state.usernameErr)
+        const {username,email,password} = this.state
+        const {usernameErr,emailErr,passErr} = this.state
+       
+        // console.log( username=='' || email=='' || password=='')
         return(
             <div className="auth">
                 <button className="btn-cancel" onClick={this.props.onCancel}><img src="./cancel-grey/cancel-grey.png"/></button>
@@ -115,15 +99,14 @@ class Register extends Component{
                         <input 
                             type="text" 
                             className="form-control" 
-                            id="name" 
-                            aria-describedby="nameHelp" 
                             placeholder="Enter your name" 
-                            value={this.state.username}
+                            id="name" 
+                            value={username}
                             name="username"
                             onChange={this.handleUsernameChange}
-                            onBlur={this.validateUsername}
+                            onBlur={this.validateUsername}                           
                             />
-                        <small className="form-text text-danger">{this.state.usernameErr}</small>
+                        <small className="form-text text-danger">{usernameErr}</small>
                     </div>
                     <div className="form-group">
                         <label>EMAIL</label>
@@ -131,15 +114,13 @@ class Register extends Component{
                             type="text" 
                             className="form-control" 
                             id="email" 
-                            aria-describedby="emailHelp" 
                             placeholder="Enter your email" 
-                            autoComplete="off"
-                            value={this.state.email}
+                            value={email}
                             name="email"
                             onChange={this.handleEmailChange}
                             onBlur={this.validateEmail}
-                            />
-                        <small className="form-text text-danger">{this.state.emailErr}</small>
+                        />
+                        <small className="form-text text-danger">{emailErr}</small>
                     </div>
                     <div className="form-group">
                         <label>PASSWORD</label>
@@ -147,20 +128,26 @@ class Register extends Component{
                                 className="form-control" 
                                 id="password" 
                                 placeholder="Enter your password..." 
-                                autoComplete="off"
-                                value={this.state.password}
+                                value={password}
                                 name="password"
                                 onChange={this.handlePasswordChange}
                                 onBlur={this.validatePassword}
-                                />
-                         <small className="form-text text-danger">{this.state.passErr}</small>                        
+                        />
+                        <small className="form-text text-danger">{passErr}</small>                        
                     </div>
-                    <div>
+                    <div className="remember-me">
                         <p>By creating an account your agree to the <br/>
                         <a href="#">Term of Service</a> and <a href="#">Privacy Policy</a></p>
                     </div>
-                    <button type="submit" className="btn btn-register-submit" onClick={this.handleSubmit}>Register</button>
-                    <p>Do you have an acount? <a href="#">Log in</a></p>
+                    <button     
+                            type="submit" 
+                            className= {(username == '' || email == '' || password == '' )?  "btn btn-submit" : "btn btn-submit btn-active" }  
+                            onClick={this.handleSubmit}>
+                            Register
+                    </button>
+                    <div className="noaccount">
+                        <p>Do you have an acount?  <a href="#" onClick={this.props.onToggleLogin}>Log in</a> </p>
+                    </div>
                 </form>
             </div>
         )

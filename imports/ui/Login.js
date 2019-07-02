@@ -31,18 +31,21 @@ class Login extends Component{
                 this.setState({
                     error: error.reason
                 })
-            }else{  
+            }else{
+                
+                // console.log(Meteor.user())
                 this.props.onSetStateLogin()
             }
         });
     };
 
     render(){
+        const {email,password,error} = this.state
         return(
             <div className="auth">
                 <button className="btn-cancel" onClick={this.props.onCancel}><img src="./cancel-grey/cancel-grey.png"/></button>
                 <h2 className="text-center">Login</h2>
-                <p className="text-center text-danger">{this.state.error}</p>
+                <p className="text-center text-danger">{error}</p>
                 <form className="auth-form" onSubmit = { this.handleSubmit }>
                     <div className="form-group">
                         <label>EMAIL</label>
@@ -50,10 +53,9 @@ class Login extends Component{
                                 type="text" 
                                 className="form-control" 
                                 id="email" 
-                                aria-describedby="emailHelp" 
                                 placeholder="Enter your email" 
                                 autoComplete="off"
-                                value={this.state.email}
+                                value={email}
                                 name="email"
                                 onChange={this.handleEmailChange}
                         />
@@ -65,25 +67,31 @@ class Login extends Component{
                                 id="password" 
                                 placeholder="Enter your password..." 
                                 autoComplete="off"
-                                value={this.state.password}
+                                value={password}
                                 name="password"
                                 onChange={this.handlePasswordChange}
                                 />
                     </div>
                     <div className="form-check">
-                        <div className="row">
+                        <div className="row remember-me">
                             <div className="col-6">
                                 <input type="checkbox" className="form-check-input" id="remember-password" />  
                                 <p>Remember password </p>
                             </div>
                             <div className="col-6">
-                                <p>Forgot your password?</p>
+                                <a href="#" onClick = { this.props.onToggleForgotPass }>Forgot your password?</a>
                             </div>
-                        </div>
-                        
+                        </div>                       
                     </div>
-                    <button type="submit" className="btn btn-login-submit">Log In</button>
-                    <p>Don't have an acount? <a href="#">Register</a></p>
+                    <button 
+                        type="submit" 
+                        className= {(email == '' || password == '' )? "btn btn-submit" : "btn btn-submit btn-active" } >
+                        Log In
+                    </button>
+                    <div className="noaccount">
+                        <p>Don't have an acount? <a href="#" onClick={this.props.onToggleRegister}>Register</a></p>
+                    </div>
+                
                 </form>
             </div>
         )

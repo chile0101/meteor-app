@@ -2,8 +2,6 @@
     margin-top: 21px;
     padding: 0;
     width: 100%;
-    /* background-image: url("./public/rectange/rectangle.png"); */
-    /* border: solid red 1px; */
 
 }
 
@@ -11,11 +9,11 @@
     float: left;
     border-top-left-radius: 17px;
     border-bottom-left-radius: 17px;
-    padding: 10px;
+    padding-left: 12px;
     font-size: 14px;
     border: solid 1px var(--greyish-two);
     border-right-style: none;
-    
+    outline: none;
     width: 70%;
     height: 35px;
     background: #f1f1f1;
@@ -26,7 +24,6 @@
     border-top-right-radius: 17px;
     border-bottom-right-radius: 17px;
     height: 35px;
-   
     width: 30%;
     padding-right: 3px;
     background: #f1f1f1;
@@ -34,15 +31,32 @@
     font-size: 17px;
     border: solid 1px var(--greyish-two);
     border-left-style: none;
-    
     cursor: pointer;
+    outline: none;
 }
+.search-form button:focus{
+    outline: 0;
+}
+
 .Logo {
     text-align: center;
     width: 96px;
     height: 20px;
     object-fit: contain;
 }
+/* ----------------------- if logged in ----------------------- */
+.avatar {
+    display: inline;
+    margin-right: 25px;
+    margin-left: 270px;
+}
+.avatar-img{
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+/* ------------------------------------------------------------- */
 .btns-auth{
     display: inline;
 }
@@ -62,6 +76,8 @@
     color: var(--greyish-brown);
     margin-right: 20px;
     margin-left: 95px;
+    outline: none;
+    cursor: pointer;
 }
 .btn-login{
     width: 120px;
@@ -79,27 +95,22 @@
     letter-spacing: normal;
     text-align: center;
     color: #ff7e24;
+    outline: none;
+    cursor: pointer;
 }
-
-.avatar {
-    display: inline;
-    margin-right: 25px;
-    margin-left: 270px;
+.btn-login:focus{
+    outline: 0;
 }
-.avatar-img{
-    width: 28px;
-    height: 28px;
-    vertical-align: middle;
-    border-radius: 50%;
+.btn-register:focus{
+    outline: 0;
 }
-
+/* ------------------------------------------------------------- */
 .cart{
     display: inline;
     position: relative;
 }
 
 .Oval {
-    /* display: inline; */
     position:absolute;
     top:-6px;
     right:-8px;
@@ -110,10 +121,7 @@
     background-color: var(--pale-orange);
     border-radius: 12px;
     text-align: center;
-    
     padding: 0px 4px;
-    /* margin-left: 20px; */
-   
     font-family: Montserrat;
     font-size: 12px;
     font-weight: 500;
@@ -122,12 +130,9 @@
     line-height: 1.83;
     letter-spacing: normal;
     color: var(--white);
-
 }
 
-
-
-/* ------------------------------------------------------ */
+/* ------------------------------------------------------------- */
 
 .header-menu{
     margin-top: 13px;
@@ -154,7 +159,6 @@
 }
 .header-menu ul li {
     display: inline;
-    
     padding: 0px 10px;
 }
 

@@ -2,9 +2,11 @@ import React,{Component} from 'react'
 
 import Login from './Login'
 import Register from './Register'
-import Logout from './logout';
+import Logout from './Logout';
 
 import { Session } from 'meteor/session'
+import { Meteor } from 'meteor/meteor';
+import ForgotPassword from './ForgotPassword';
 
 
 
@@ -13,20 +15,20 @@ class Header extends Component{
     constructor(props) {
         super(props)
         this.state = {
-            stateLoggedin: false,
             showRegister: false,
             showLogin: false,
             showLogout: false,  
+            showForgotPass: true,
         }
       
     }
     onSetStateLogin = (event) => {
 
         this.setState({
-            stateLoggedin: !this.state.stateLoggedin,
             showRegister: false,
             showLogin: false,  
-            showLogout: false
+            showLogout: false,
+            showForgotPass: false,
         })
     }
     onToggleRegister =  (event) => {
@@ -43,12 +45,19 @@ class Header extends Component{
         })
         
     }
+    onToggleForgotPass = (event) => {
+        this.setState({
+            showForgotPass:  !this.state.showForgotPass,
+            showRegister: false,
+            showLogin: false,  
+        })  
+    }
     onToggleLogout = (event) => {
         this.setState({
             showLogout:  !this.state.showLogout,
-        })
-        
+        })  
     }
+    
 
     render(){
         return(
@@ -60,10 +69,10 @@ class Header extends Component{
                         <div className="col-4">
                             <div className="row">
                                 <div className="col-6">
-                                <form className="search-form">
-                                    <input type="text" placeholder="Search.." name="search" />
-                                    <button type="submit" className="btn-search"><img src="./search/search.png" /></button>
-                                </form>
+                                    <form className="search-form">
+                                        <input type="text" placeholder="Search.." name="search" />
+                                        <button type="submit" className="btn-search"><img src="./search/search.png" /></button>
+                                    </form>
                                 </div>
                                 <div className="col-6" />
                             </div>
@@ -74,7 +83,7 @@ class Header extends Component{
                         </div>
 
                         <div className="col-4 text-right">
-                            { this.state.stateLoggedin ?
+                            { Meteor.user() ?
                                 <div className="avatar" >
                                     <img src="./profile/profile.jpg" alt="Avatar" className = "avatar-img" onClick={ this.onToggleLogout }></img>
                                 </div>  
@@ -115,8 +124,16 @@ class Header extends Component{
                 </ul>     
             </div>
             {this.state.showLogout ? <Logout onSetStateLogin = { this.onSetStateLogin }/> : null}                
-            {this.state.showRegister ? <Register  onCancel = {this.onToggleRegister}/> : null}
-            {this.state.showLogin ? <Login onSetStateLogin = { this.onSetStateLogin }  onCancel = {this.onToggleLogin}/> : null}
+            {this.state.showRegister ? <Register    onSetStateLogin = { this.onSetStateLogin }  
+                                                    onCancel = {this.onToggleRegister} 
+                                                    onToggleLogin = {this.onToggleLogin}/> : null}
+            {this.state.showLogin ? <Login  onSetStateLogin = { this.onSetStateLogin }  
+                                            onCancel = {this.onToggleLogin}
+                                            onToggleForgotPass = {this.onToggleForgotPass}
+                                            onToggleRegister = {this.onToggleRegister}/> : null}
+            {this.state.showForgotPass ? <ForgotPassword    onSetStateLogin = { this.onSetStateLogin }  
+                                                            onToggleLogin = {this.onToggleLogin}
+                                                            onCancel = {this.onToggleLogin} /> : null}
 
            
             </div>

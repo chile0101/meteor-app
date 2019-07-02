@@ -6,19 +6,16 @@ import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
 //------------------API------------------------
 
 //----------------Component--------------------
-
 import Header from './Header'
 import Home from './Home'
 import Footer from './Footer'
-
-import NotFound from './NotFound.js';
+import NotFound from './pages/NotFound'
 
 class App extends Component{
   render(){
     return( 
       <div>
         <Header></Header>
-        
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -32,10 +29,13 @@ class App extends Component{
   }
 }
 
-export default App
-
-
-
+export default withTracker(() => {
+    return {
+      // tasks: Tasks.find({},{sort:{createAt: -1}}).fetch(),
+      // incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
+      currentUser: Meteor.user()
+    };
+  })(App);
 
  
 // class App extends Component {
@@ -95,12 +95,6 @@ export default App
 //     }
 // }
 
-// export default withTracker(() => {
-//     return {
-//       tasks: Tasks.find({},{sort:{createAt: -1}}).fetch(),
-//       incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
-//       currentUser: Meteor.user(),
-//     };
-//   })(App);
+
 
 

@@ -1,0 +1,19 @@
+.subcate ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: var(--dark-grey);
+}
+.subcate li {
+    display: inline;
+    
+    padding: 0px 10px;
+}
