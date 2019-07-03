@@ -34,15 +34,24 @@ class Register extends Component{
     validateUsername = () => {
         const { username } = this.state;
         this.setState({
-            usernameErr: username.length > 0 ? '' : 'Username is required.'
+            usernameErr: username.length > 0 ? '' : 'Name is required.'
         });
     }
-
+    validateEmailReget = (email) => {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
     validateEmail = () => {
-    const { email } = this.state;
-    this.setState({
-        emailErr: email.length > 0 ? '' : 'Email is required.'
-    });
+        const { email } = this.state;
+        let emailerr='';
+        if(email.length == 0 ){
+            emailerr = 'Email is required.'
+        }else if(!this.validateEmailReget(email)){
+            emailerr = 'Please enter a valid e-mail!'
+        }
+        this.setState({
+            emailErr: emailerr
+        });
     }
 
     validatePassword = () => {
@@ -51,10 +60,11 @@ class Register extends Component{
           passErr: password.length > 6 ? '' : 'Your password must be more than 6 characters!'
         });
     };
-    handleSubmit = event => {
+    handleSubmit = event => {   
         event.preventDefault();
         const { username, email, password,usernameErr,emailErr,passErr } = this.state;
         if(usernameErr == '' & emailErr == '' & passErr == ''){
+            
             Accounts.createUser({
                 username: username,
                 email: email,
@@ -63,22 +73,22 @@ class Register extends Component{
                     img: './profile/profile.jpg'
                 }
                 }, err => {
-                   if(err){
-                       if(err.error == 403){
-                           if(err.reason[0] =='U'){
-                                this.setState({
-                                    usernameErr: err.reason
-                                })
-                           }else{
-                                this.setState({
-                                    emailErr: err.reason
-                                })
-                           }
-                       }
-                        
-                   }else{
-                        this.props.onSetStateLogin()
-                   }
+                    if(err){
+                        if(err.error == 403){
+                            if(err.reason[0] =='U'){
+                                    this.setState({
+                                        usernameErr: err.reason
+                                    })
+                            }else{
+                                    this.setState({
+                                        emailErr: err.reason
+                                    })
+                            }
+                        }
+                    console.log(err)   
+                    }else{
+                            this.props.onSetStateLogin()
+                    }
             });
         }else{
             return
@@ -87,13 +97,11 @@ class Register extends Component{
     render(){
         const {username,email,password} = this.state
         const {usernameErr,emailErr,passErr} = this.state
-       
-        // console.log( username=='' || email=='' || password=='')
         return(
             <div className="auth">
                 <button className="btn-cancel" onClick={this.props.onCancel}><img src="./cancel-grey/cancel-grey.png"/></button>
                 <h2 className="text-center">Register</h2>
-                <form className="auth-form">
+                <form className="auth-form" onSubmit = { this.handleSubmit }>
                     <div className="form-group">
                         <label>NAME</label>
                         <input 
@@ -141,8 +149,7 @@ class Register extends Component{
                     </div>
                     <button     
                             type="submit" 
-                            className= {(username == '' || email == '' || password == '' )?  "btn btn-submit" : "btn btn-submit btn-active" }  
-                            onClick={this.handleSubmit}>
+                            className= {(username == '' || email == '' || password == '' )?  "btn btn-submit" : "btn btn-submit btn-active" }>
                             Register
                     </button>
                     <div className="noaccount">

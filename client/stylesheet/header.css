@@ -160,6 +160,11 @@
 .header-menu ul li {
     display: inline;
     padding: 0px 10px;
+    cursor: pointer;
+}
+.header-menu li:hover .subcate {
+    display: block;
+
 }
 
 /* --------------------------------- */

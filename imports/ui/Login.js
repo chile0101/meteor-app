@@ -21,19 +21,29 @@ class Login extends Component{
             password: event.target.value
         });
     };
+
+    validateEmailReget = (email) => {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
    
     handleSubmit = (event) => {
         event.preventDefault();
         let email = this.state.email
         let password = this.state.password
+
+        if(this.validateEmailReget(email)){
+            this.setState({
+                error: 'Your e-mail/password is invalid!'
+            })
+        }
+
         Meteor.loginWithPassword(email, password, (error) => {
             if(error){
                 this.setState({
-                    error: error.reason
+                    error: 'Your e-mail/password is invalid!'
                 })
             }else{
-                
-                // console.log(Meteor.user())
                 this.props.onSetStateLogin()
             }
         });

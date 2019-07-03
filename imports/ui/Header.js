@@ -7,6 +7,7 @@ import Logout from './Logout';
 import { Session } from 'meteor/session'
 import { Meteor } from 'meteor/meteor';
 import ForgotPassword from './ForgotPassword';
+import SubCate from './SubCate'
 
 
 
@@ -18,11 +19,11 @@ class Header extends Component{
             showRegister: false,
             showLogin: false,
             showLogout: false,  
-            showForgotPass: true,
+            showForgotPass: false,
         }
       
     }
-    onSetStateLogin = (event) => {
+    onSetStateLogin = () => {
 
         this.setState({
             showRegister: false,
@@ -31,28 +32,31 @@ class Header extends Component{
             showForgotPass: false,
         })
     }
-    onToggleRegister =  (event) => {
+    onToggleRegister =  () => {
         this.setState({
             showRegister: !this.state.showRegister,
-            showLogin: false
+            showLogin: false,
+            showForgotPass: false,
         })
     }
-    onToggleLogin = (event) => {
+    onToggleLogin = () => {
        
         this.setState({
             showLogin:  !this.state.showLogin,
-            showRegister: false
+            showRegister: false,
+            showForgotPass:false,
         })
         
     }
-    onToggleForgotPass = (event) => {
+    onToggleForgotPass = () => {
         this.setState({
             showForgotPass:  !this.state.showForgotPass,
             showRegister: false,
             showLogin: false,  
         })  
     }
-    onToggleLogout = (event) => {
+
+    onToggleLogout = () => {
         this.setState({
             showLogout:  !this.state.showLogout,
         })  
@@ -86,6 +90,7 @@ class Header extends Component{
                             { Meteor.user() ?
                                 <div className="avatar" >
                                     <img src="./profile/profile.jpg" alt="Avatar" className = "avatar-img" onClick={ this.onToggleLogout }></img>
+                                    
                                 </div>  
                                 : 
                                 <div className = "btns-auth">
@@ -105,21 +110,25 @@ class Header extends Component{
             
             <div className="header-menu">
                 <ul>
-                    <li>
+                    <li >
                         <span>Men</span>
                         <a><img src="./arrow-black/arrow-black.png" /></a>
+                        <SubCate/>
                     </li>
                     <li>
                         <span>Ladies</span>
                         <a><img src="./arrow-black/arrow-black.png" /></a>
+                        <SubCate/>
                     </li>
                     <li>
                         <span>Girl</span>
                         <a><img src="./arrow-black/arrow-black.png" /></a>
+                        <SubCate/>
                     </li>
                     <li>
                         <span>Boy</span>
                         <a><img src="./arrow-black/arrow-black.png" /></a>
+                        <SubCate/>
                     </li>
                 </ul>     
             </div>

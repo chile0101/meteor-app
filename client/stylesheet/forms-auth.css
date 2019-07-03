@@ -1,13 +1,16 @@
 .auth{
   display: block;
   position: fixed;
-  top: 10%;
+  top: 15%;
   left: 30%;
   /* transform: translate(-50%, -50%); */
   z-index: 9999;
-  padding: 20px 78px 20px 78px;
+  padding: 30px 78px 20px 78px;
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.03);
   background-color: var(--white);
+  
+  max-height: 500px;
+  overflow: auto;
 }
 
 .btn-cancel{

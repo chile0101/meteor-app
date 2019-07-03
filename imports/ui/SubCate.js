@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class SubCate extends Component{
     render(){
         return(
-            <div className="subcate">
+            <div className="subcate text-center">
                 <ul>
                     <li>Tops</li>
                     <li>Bottoms</li>

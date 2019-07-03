@@ -8,6 +8,7 @@ import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
 //----------------Component--------------------
 import Header from './Header'
 import Home from './Home'
+import AllProduct from './AllProduct'
 import Footer from './Footer'
 import NotFound from './pages/NotFound'
 
@@ -18,7 +19,7 @@ class App extends Component{
         <Header></Header>
         <Router>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={AllProduct} />
             <Route component={NotFound} />
           </Switch>
         </Router>
