@@ -406,41 +406,6 @@ $item-selected: #f1f1f1;
                         $color: $dark-grey);
         }
     }
-    // .quantity{
-    //     margin-top:28px;
-    //     img{
-    //         @include base-icon($background:$white);
-    //     }
-        
-    //     button{
-    //         background-color:$white;
-    //         padding:8px;
-    //         border: 1px solid $pinkish-grey;
-    //         &:first-child{
-    //             border-right: none;
-    //             position: relative;
-
-    //         }
-    //     }
-    //     span{
-    //         margin-right: 20px;
-    //         @include base-style($font-size:14px,
-    //                     $font-weight:600,
-    //                     $line-height:1.53,
-    //                     $color: $dark-grey);
-    //     }
-    //     input{
-    //         position: relative;
-    //         top:2px;
-    //         right: 0px;
-    //         width: 40px;
-    //         height: 44px;
-    //         text-align: center;
-    //         border: 1px solid $pinkish-grey;
-    //         border-left: none;
-    //         border-right: none;
-    //     }
-    // }
     .addcart-btn{
         margin-bottom: 20px;
         width: 100%;
@@ -728,34 +693,102 @@ $item-selected: #f1f1f1;
     padding: 32px 30px 24px 30px;
     background-color: #f9f9f9;
    
-   .total-detail{
+    .total-detail{
+            span{
+                @include base-style($font-size:14px,
+                                    $font-weight:500,
+                                    $line-height:1.57,
+                                    $color: $dark-grey);  
+            }
+    }
+    .total-price{
         span{
-            @include base-style($font-size:14px,
-                                $font-weight:500,
-                                $line-height:1.57,
-                                $color: $dark-grey);  
+                @include base-style($font-size:16px,
+                                    $font-weight:bold,
+                                    $line-height:1.5,
+                                    $color: $dark-grey);  
         }
-   }
-   .total-price{
-       span{
-            @include base-style($font-size:16px,
-                                $font-weight:bold,
-                                $line-height:1.5,
-                                $color: $dark-grey);  
-       }
-   }
-   button{
+    }
+    button{
         margin-top:40px;
         width: 100%;
         border:none;
         padding: 12px;
         box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.12);
         background-color: #ff5f6d;
-       span{
+        span{
         @include base-style($font-size:16px,
                             $font-weight:bold,
                             $line-height:1.5,
                             $color: $white);  
-       }
-   }
+        }
+    }
+}
+// ---------------------------------------------Cart----------------------------------------------
+
+.view-cart{
+   
+    position: absolute;
+    top:71px;
+    right:117px;
+    z-index: 9999;
+    box-shadow: 0 14px 30px 0 rgba(0, 0, 0, 0.14);
+    border: solid 0.5px #eaeaea;
+    background-color: #fbfbfb;
+    ul{
+        list-style-type: none;
+        margin:0;
+        padding:0;
+    }
+    li{
+        padding:10px 7px;
+        cursor: pointer;
+        border-bottom: 1px solid $pinkish-grey;
+    }
+    img{
+        width: 60px;
+        height: 60px;
+    }
+    .view-cart-btn{
+        text-align: center;
+        button{
+            cursor: pointer;
+            margin-top:21px;
+            margin-bottom: 26px;
+            border: none;
+            background-color:transparent;
+            span{
+                @include base-style($font-size:14px,
+                                $font-weight:bold,
+                                $line-height:1.53,
+                                $color: $pale-orange);  
+            }
+        }
+    }
+    .view-cart-content{
+        margin-left:20px;
+        float:right;
+        p{
+            @include base-style($font-size:12px,
+                            $font-weight:600,
+                            $line-height:1.33,
+                            $color: $greyish-brown);  
+        }
+        span{
+            @include base-style($font-size:12px,
+                            $font-weight:normal,
+                            $line-height:1.83,
+                            $color: $greyish-brown); 
+        }
+        .item-details{
+            float:right;
+            span{
+                margin-right:5px;
+                @include base-style($font-size:12px,
+                            $font-weight:normal,
+                            $line-height:1.83,
+                            $color: $dark-grey);  
+            }
+        }
+    }
 }

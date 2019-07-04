@@ -162,9 +162,40 @@ class AllProduct extends Component{
                                     <span>$69.00</span>
                                 </div>
                             </div>
-                            <div className="col">col</div>
-                            <div className="col">col</div>
-                            <div className="col">col</div>
+                            <div className="col">
+                                <div className="product-cart">
+                                    <div className="product-front">
+                                        <img className="product-img" src="./products/p1.jpg"/>
+                                        {/* <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button> */}
+                                        <label>Sold out</label>
+                                    </div>
+                                    <h5>Collete Stretch Linen Minidress</h5>
+                                    <span>$69.00</span>
+                                </div>
+                            </div>
+                            <div className="col">
+                                <div className="product-cart">
+                                    <div className="product-front">
+                                        <img className="product-img" src="./products/p1.jpg"/>
+                                        {/* <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button> */}
+                                        <label>Sold out</label>
+                                    </div>
+                                    <h5>Collete Stretch Linen Minidress</h5>
+                                    <span>$69.00</span>
+                                </div>
+                            </div>
+                            <div className="col">
+                                <div className="product-cart">
+                                    <div className="product-front">
+                                        <img className="product-img" src="./products/p1.jpg"/>
+                                        {/* <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button> */}
+                                        <label>Sold out</label>
+                                    </div>
+                                    <h5>Collete Stretch Linen Minidress</h5>
+                                    <span>$69.00</span>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
