@@ -406,41 +406,41 @@ $item-selected: #f1f1f1;
                         $color: $dark-grey);
         }
     }
-    .quantity{
-        margin-top:28px;
-        img{
-            @include base-icon($background:$white);
-        }
+    // .quantity{
+    //     margin-top:28px;
+    //     img{
+    //         @include base-icon($background:$white);
+    //     }
         
-        button{
-            background-color:$white;
-            padding:8px;
-            border: 1px solid $pinkish-grey;
-            &:first-child{
-                border-right: none;
-                position: relative;
+    //     button{
+    //         background-color:$white;
+    //         padding:8px;
+    //         border: 1px solid $pinkish-grey;
+    //         &:first-child{
+    //             border-right: none;
+    //             position: relative;
 
-            }
-        }
-        span{
-            margin-right: 20px;
-            @include base-style($font-size:14px,
-                        $font-weight:600,
-                        $line-height:1.53,
-                        $color: $dark-grey);
-        }
-        input{
-            position: relative;
-            top:2px;
-            right: 0px;
-            width: 40px;
-            height: 44px;
-            text-align: center;
-            border: 1px solid $pinkish-grey;
-            border-left: none;
-            border-right: none;
-        }
-    }
+    //         }
+    //     }
+    //     span{
+    //         margin-right: 20px;
+    //         @include base-style($font-size:14px,
+    //                     $font-weight:600,
+    //                     $line-height:1.53,
+    //                     $color: $dark-grey);
+    //     }
+    //     input{
+    //         position: relative;
+    //         top:2px;
+    //         right: 0px;
+    //         width: 40px;
+    //         height: 44px;
+    //         text-align: center;
+    //         border: 1px solid $pinkish-grey;
+    //         border-left: none;
+    //         border-right: none;
+    //     }
+    // }
     .addcart-btn{
         margin-bottom: 20px;
         width: 100%;
@@ -467,8 +467,43 @@ $item-selected: #f1f1f1;
                         $color: $dark-grey);
         }
     }
-
 }
+.quantity{
+        margin-top:28px;
+        img{
+            @include base-icon($background:$white);
+        }
+        button{
+            background-color:$white;
+            padding:8px;
+            border: 1px solid $pinkish-grey;
+        }
+        .add{
+            border-left:none;
+        }
+        .reduce{
+            position: relative;
+            border-right: none;
+        }
+        span{
+            margin-right: 20px;
+            @include base-style($font-size:14px,
+                        $font-weight:600,
+                        $line-height:1.53,
+                        $color: $dark-grey);
+        }
+        input{
+            position: relative;
+            top:2px;
+            right: 0px;
+            width: 40px;
+            height: 44px;
+            text-align: center;
+            border: 1px solid $pinkish-grey;
+            border-left: none;
+            border-right: none;
+        }
+    }
 .more-from{
     .img-thumb-cp{
         @extend .img-thumb;
@@ -610,6 +645,7 @@ $item-selected: #f1f1f1;
     table{
         width: 100%;
         th{
+            
             padding:10px 0px;
             @include base-style($font-size:14px,
                         $font-weight:bold,
@@ -617,28 +653,109 @@ $item-selected: #f1f1f1;
                         $color: $dark-grey);
         }
         tr{
-            
+        
             border-top: 1px solid $pinkish-grey;
         }
         td{
+          
             padding:10px 0px;
+        }
+        .product-detail-selected{
+            position: relative;
+            width: 140px;
             img{
-                width:80px;
+                width: 80px;
                 height: 113px;
-               
             }
             p{
-             
+                width: 96px;
+                position: absolute;
+                top:0px;
+                left:100px;
+                @include base-style($font-size:14px,
+                        $font-weight:600,
+                        $line-height:1.43,
+                        $color: $dark-grey);
+            }
+            .change-remove-btn{
+                cursor: pointer;
+                position: absolute;
+                bottom:5px;
+                left:80px;
+                span{
+                    margin-left:20px;
+                    @include base-style($font-size:12px,
+                        $font-weight:normal,
+                        $line-height:1.83,
+                        $color: $dark-grey);
+                }
             }
         }
-        
+        .color-box-selected{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #ff5f6d;
+            border-radius:50%;
+            margin-right:10px;
+        }
+        .size-selected{
+            @include base-style($font-size:18px,
+                        $font-weight:500,
+                        $line-height:1.44,
+                        $color: $dark-grey);
+        }
+        .quantity-selected{
+            @extend .quantity;
+            margin-top:0px;
+            
+        }
     }
 }
-.product-detail-cart{
-    position: relative;
-    p{
-        position: absolute;
-        top:0;
-        right:0;
-    }
+.text-float-right{
+    float:right;
+}
+.total-text{
+    margin-left:30px;
+    margin-top: 10px;
+    @include base-style($font-size:14px,
+                        $font-weight:bold,
+                        $line-height:1.57,
+                        $color: $dark-grey);
+}
+.total{
+    margin-left:30px;
+    padding: 32px 30px 24px 30px;
+    background-color: #f9f9f9;
+   
+   .total-detail{
+        span{
+            @include base-style($font-size:14px,
+                                $font-weight:500,
+                                $line-height:1.57,
+                                $color: $dark-grey);  
+        }
+   }
+   .total-price{
+       span{
+            @include base-style($font-size:16px,
+                                $font-weight:bold,
+                                $line-height:1.5,
+                                $color: $dark-grey);  
+       }
+   }
+   button{
+        margin-top:40px;
+        width: 100%;
+        border:none;
+        padding: 12px;
+        box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.12);
+        background-color: #ff5f6d;
+       span{
+        @include base-style($font-size:16px,
+                            $font-weight:bold,
+                            $line-height:1.5,
+                            $color: $white);  
+       }
+   }
 }

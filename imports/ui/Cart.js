@@ -11,31 +11,83 @@ class Cart extends Component{
                             <table>
                                 <tr>
                                     <th>Product</th>
-                                    <th>Color</th> 
-                                    <th>Size</th>
-                                    <th>Quantity</th>
-                                    <th>Amonut</th> 
-                                    <th>Total</th>
+                                    <th className="text-center">Color</th> 
+                                    <th className="text-center">Size</th>
+                                    <th className="text-center">Quantity</th>
+                                    <th className="text-center">Amount</th> 
                                 </tr>
                                 <tr>
                                     <td >
-                                        <img src="./products/img1.webp"/>
-                                        <p>Collete Stretch Linen Minidress</p>
-                                        <span>Change</span><span>Remove</span>
+                                        <div className="product-detail-selected">
+                                            <img src="./products/img1.webp"/>
+                                            <p>Collete Stretch Linen Minidress</p>
+                                            <div className="change-remove-btn">
+                                                <span>Change</span><span>Remove</span>   
+                                            </div>
+                                        </div>
                                     </td>
-                                    <td>Smith</td> 
-                                    <td>50</td>
+                                    <td className="text-center">
+                                        <div className="color-box-selected"></div>
+                                    </td> 
+                                    <td className="text-center">
+                                        <span className="size-selected">S</span>
+                                    </td>
+                                    <td className="text-center">
+                                        <div className="quantity-selected">
+                                            <button className="reduce"><img src="./plus-black/plus-black.png"/></button>
+                                            <input type="text" maxLength="3" value="1" ></input>
+                                            <button className="add"><img src="./minus-black/minus-black.png"/></button>
+                                        </div>
+                                    </td>
+                                    <td className="text-center">   
+                                        <span className="size-selected">$69.00</span>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Jill</td>
-                                    <td>Smith</td> 
-                                    <td>50</td>
+                                    <td >
+                                        <div className="product-detail-selected">
+                                            <img src="./products/img1.webp"/>
+                                            <p>Collete Stretch Linen Minidress</p>
+                                            <div className="change-remove-btn">
+                                                <span>Change</span><span>Remove</span>   
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="text-center">
+                                        <div className="color-box-selected"></div>
+                                    </td> 
+                                    <td className="text-center">
+                                        <span className="size-selected">S</span>
+                                    </td>
+                                    <td className="text-center">
+                                        <div className="quantity-selected">
+                                            <button className="reduce"><img src="./plus-black/plus-black.png"/></button>
+                                            <input type="text" maxLength="3" value="1" ></input>
+                                            <button className="add"><img src="./minus-black/minus-black.png"/></button>
+                                        </div>
+                                    </td>
+                                    <td className="text-center">   
+                                        <span className="size-selected">$69.00</span>
+                                    </td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                     <div className="col-4">
-                        chekout
+                        <p className="total-text">Total</p>
+                        <div className="total">
+                            
+                            <div className="total-detail">
+                                <span>Shipping & Handling: </span><span className="text-float-right">Free</span><br/>
+                                <span>Total product</span><span className="text-float-right">$69.00</span>
+                                <hr/>
+                                <div className="total-price">
+                                    <span>Subtotal</span><span className="text-float-right">$69.00</span>
+                                </div>
+                                
+                            </div>
+                            <button><span>Check out</span></button>
+                        </div>
                     </div>
                 </div>
 
