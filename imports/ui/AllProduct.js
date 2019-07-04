@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import CompoundSlider from './CompoundSlider';
 
 class AllProduct extends Component{
     render(){
@@ -110,8 +111,23 @@ class AllProduct extends Component{
                                             </div>
 
                                             <div className="accordion-item-content">
-                                                <div className="">
-                                                    
+                                                <CompoundSlider/>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="accordion-item">
+                                            <div className="accordion-item-header">
+                                                <span href="#">Available</span>
+                                                <img src="./arrow-black/arrow-black.png"/>
+                                            </div>
+
+                                            <div className="accordion-item-content">
+                                                <div className="availabel-list">
+                                                    <ul>
+                                                        <li><span>In-store</span><img src="./checkbox-orange/checkbox-orange.png"/></li>
+                                                        <li><span>Out of stock</span><img src="./checkbox-orange/checkbox-orange.png"/></li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -125,17 +141,42 @@ class AllProduct extends Component{
 
                     <div className="col-10">
                         <div className="row">
-                            <div className="col">col1</div>
-                            <div className="col">col2</div>
-                            <div className="col">safd</div>
-                            <div className="col">asf</div>
-                            <div className="col">asdf</div>
+                            <div className="col">
+                                <div className="product-cart">
+                                    <div className="product-front">
+                                        <img className="product-img" src="./products/p1.jpg"/>
+                                        <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button>
+                                    </div>
+                                    <h5>Collete Stretch Linen Minidress</h5>
+                                    <span>$69.00</span>
+                                </div>
+                            </div>
+                            <div className="col">
+                                <div className="product-cart">
+                                    <div className="product-front">
+                                        <img className="product-img" src="./products/p1.jpg"/>
+                                        {/* <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button> */}
+                                        <label>Sold out</label>
+                                    </div>
+                                    <h5>Collete Stretch Linen Minidress</h5>
+                                    <span>$69.00</span>
+                                </div>
+                            </div>
+                            <div className="col">col</div>
+                            <div className="col">col</div>
+                            <div className="col">col</div>
                         </div>
                     </div>
-                    
-
                 </div>
-
+                <div className="row">
+                <div className="col text-right">
+                    <div className="paginationn">
+                        <button><img src="./arrow-black/arrow-black.png"/></button>
+                        <span>1/100</span>
+                        <button><img src="./arrow-black/arrow-black.png"/></button>
+                    </div>
+                </div>   
+                </div>
 
 
             </div>

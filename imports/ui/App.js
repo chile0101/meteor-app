@@ -9,6 +9,8 @@ import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
 import Header from './Header'
 import Home from './Home'
 import AllProduct from './AllProduct'
+import ProductDetail from './ProductDetail'
+import Cart from './Cart'
 import Footer from './Footer'
 import NotFound from './pages/NotFound'
 
@@ -20,6 +22,8 @@ class App extends Component{
         <Router>
           <Switch>
             <Route exact path="/" component={AllProduct} />
+            <Route path ="/product" component={ProductDetail}/>
+            <Route path="/cart" component={Cart}/>
             <Route component={NotFound} />
           </Switch>
         </Router>
