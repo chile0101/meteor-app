@@ -1,11 +1,12 @@
 import React,{Component} from 'react'
+import { Session } from 'meteor/session'
+import { Meteor } from 'meteor/meteor';
 
 import Login from './Login'
 import Register from './Register'
 import Logout from './Logout';
+import ViewCart from './ViewCart'
 
-import { Session } from 'meteor/session'
-import { Meteor } from 'meteor/meteor';
 import ForgotPassword from './ForgotPassword';
 import SubCate from './SubCate'
 
@@ -20,6 +21,7 @@ class Header extends Component{
             showLogin: false,
             showLogout: false,  
             showForgotPass: false,
+            showViewCart:false,
         }
       
     }
@@ -37,6 +39,7 @@ class Header extends Component{
             showRegister: !this.state.showRegister,
             showLogin: false,
             showForgotPass: false,
+            showViewCart: false,
         })
     }
     onToggleLogin = () => {
@@ -45,6 +48,7 @@ class Header extends Component{
             showLogin:  !this.state.showLogin,
             showRegister: false,
             showForgotPass:false,
+            showViewCart: false,
         })
         
     }
@@ -53,12 +57,24 @@ class Header extends Component{
             showForgotPass:  !this.state.showForgotPass,
             showRegister: false,
             showLogin: false,  
+            showViewCart: false,
         })  
     }
 
     onToggleLogout = () => {
         this.setState({
             showLogout:  !this.state.showLogout,
+            showViewCart: false,
+        })  
+    }
+
+    onToggleViewCart = () => {
+        this.setState({
+            showViewCart:  !this.state.showViewCart,
+            showRegister: false,
+            showLogin: false,  
+            showLogout:false,
+            showForgotPass:false,
         })  
     }
     
@@ -98,7 +114,7 @@ class Header extends Component{
                                     <button className="btn-login" onClick = { this.onToggleLogin }>Log In</button>
                                 </div>
                             }                                                  
-                            <div className="cart">
+                            <div className="cart" onClick={this.onToggleViewCart}>
                                 <a href="#"><img src="./cart/cart.png"/></a>
                                 <div className="Oval">7</div>
                             </div>
@@ -132,35 +148,9 @@ class Header extends Component{
                     </li>
                 </ul>     
             </div>
-
-            <div className="view-cart">
-                <ul>
-                    <li>
-                        <img src="./products/img1.webp"/>
-                        <div className="view-cart-content">
-                            <p>New Balance Men's Street Backpack</p>
-                            <span>$485</span>
-                            <div className="item-details">
-                                <span>S</span> <span>Black</span><span>1pcs</span>
-                            </div>
-                        </div>  
-                    </li>
-                    <li>
-                        <img src="./products/img1.webp"/>
-                        <div className="view-cart-content">
-                            <p>New Balance Men's Street Backpack</p>
-                            <span>$485</span>
-                            <div className="item-details">
-                                <span>S</span> <span>Black</span><span>1pcs</span>
-                            </div>
-                        </div>  
-                    </li>
-                </ul>
-                <div className="view-cart-btn">
-                    <button><span>View cart</span></button> 
-                </div>
-            </div>
-
+                            
+           {this.state.showViewCart ? <ViewCart/> : null}
+            
             {this.state.showLogout ? <Logout onSetStateLogin = { this.onSetStateLogin }/> : null}                
             {this.state.showRegister ? <Register    onSetStateLogin = { this.onSetStateLogin }  
                                                     onCancel = {this.onToggleRegister} 

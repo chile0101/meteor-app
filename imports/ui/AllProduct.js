@@ -1,17 +1,51 @@
 import React,{Component} from 'react'
 import CompoundSlider from './CompoundSlider';
+import BreadCrumb from './Breadcrumb';
+import SizeBox from './SizeBox';
+import ColorBox from './ColorBox'
+import BrandList from './BrandList';
+import AvailabelList from './AvailabelList';
 
 class AllProduct extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            showSize : false,
+            showColor: false,
+            showBrand: false,
+            showPrice: false,
+            showAvailable: false,
+        }
+    }
+    onToggleSize =  () => {
+        this.setState({
+            showSize: !this.state.showSize,
+        })
+    }
+    onToggleColor =  () => {
+        this.setState({
+            showColor: !this.state.showColor,
+        })
+    }
+    onToggleBrand =  () => {
+        this.setState({
+            showBrand: !this.state.showBrand,
+        })
+    }
+    onTogglePrice =  () => {
+        this.setState({
+            showPrice: !this.state.showPrice,
+        })
+    }
+    onToggleAvailable =  () => {
+        this.setState({
+            showAvailable: !this.state.showAvailable,
+        })
+    }
     render(){
         return(
             <div className="container">
-                <div className="bread-crumb">
-                    <ul >
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Pictures</a></li>
-                        <li><a href="#">Summer 15</a></li>
-                    </ul>
-                </div>
+                <BreadCrumb/>
                 <div className="row">
                     <div className="col-2">
                         <span className = "cate-filter-text">Category</span>
@@ -57,79 +91,55 @@ class AllProduct extends Component{
                                 <ul >
                                     <li>
                                         <div className="accordion-item">
-                                            <div className="accordion-item-header">
+                                            <div className="accordion-item-header" onClick={this.onToggleSize}>
                                                 <span href="#">Size</span>
                                                 <img src="./arrow-black/arrow-black.png"/>
                                             </div>
-
-                                            <div className="accordion-item-content">
-                                                <div className="size-box-selected"><span>S</span></div>
-                                                <div className="size-box"><span>M</span></div>
-                                                <div className="size-box"><span>L</span></div>
-                                            </div>
+                                            {this.state.showSize ? <SizeBox/> : null}                                       
                                         </div>
                                     </li>
                                     <li>
                                         <div className="accordion-item">
-                                            <div className="accordion-item-header">
+                                            <div className="accordion-item-header" onClick={this.onToggleColor} >
                                                 <span href="#">Color</span>
                                                 <img src="./arrow-black/arrow-black.png"/>
                                             </div>
 
-                                            <div className="accordion-item-content">
-                                                <div className="color-box-selected"></div>
-                                                <div className="color-box"></div>
-                                                <div className="color-box"></div>
-                                            </div>
+                                           {this.state.showColor ? <ColorBox/>:null}
+
                                         </div>
                                     </li>
                                     <li>
                                         <div className="accordion-item">
-                                            <div className="accordion-item-header">
+                                            <div className="accordion-item-header" onClick={this.onToggleBrand}>
                                                 <span href="#">Brand</span>
                                                 <img src="./arrow-black/arrow-black.png"/>
                                             </div>
 
-                                            <div className="accordion-item-content">
-                                                <div className="brand-list">
-                                                    <ul>
-                                                        <li><span>Zara</span><img src="./checkbox-orange/checkbox-orange.png"/></li>
-                                                        <li><span>Zara</span><img src="./checkbox-orange/checkbox-orange.png"/></li>
-                                                        <li><span>Zara</span><img src="./checkbox-orange/checkbox-orange.png"/></li>
-                                                        <li><span>Zara</span><img src="./checkbox-orange/checkbox-orange.png"/></li>
-                                                        <li><span>Zara</span><img src="./checkbox-orange/checkbox-orange.png"/></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                            {this.state.showBrand ? <BrandList/> : null}
+
                                         </div>
                                     </li>
                                     <li>
                                         <div className="accordion-item">
-                                            <div className="accordion-item-header">
+                                            <div className="accordion-item-header" onClick={this.onTogglePrice}>
                                                 <span href="#">Price</span>
                                                 <img src="./arrow-black/arrow-black.png"/>
                                             </div>
 
-                                            <div className="accordion-item-content">
-                                                <CompoundSlider/>
-                                            </div>
+                                            {this.state.showPrice ? <CompoundSlider/> : null}
+                                            
                                         </div>
                                     </li>
                                     <li>
                                         <div className="accordion-item">
-                                            <div className="accordion-item-header">
+                                            <div className="accordion-item-header" onClick={this.onToggleAvailable}>
                                                 <span href="#">Available</span>
                                                 <img src="./arrow-black/arrow-black.png"/>
                                             </div>
 
-                                            <div className="accordion-item-content">
-                                                <div className="availabel-list">
-                                                    <ul>
-                                                        <li><span>In-store</span><img src="./checkbox-orange/checkbox-orange.png"/></li>
-                                                        <li><span>Out of stock</span><img src="./checkbox-orange/checkbox-orange.png"/></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                            {this.state.showAvailable ? <AvailabelList/> : null}
+
                                         </div>
                                     </li>
                                     

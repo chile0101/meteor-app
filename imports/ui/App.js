@@ -21,9 +21,10 @@ class App extends Component{
         <Header></Header>
         <Router>
           <Switch>
-            <Route exact path="/" component={AllProduct} />
-            <Route path ="/product" component={ProductDetail}/>
-            <Route path="/cart" component={Cart}/>
+            <Route exact path="/" component={Home} />
+            <Route exact path ="/products" component={AllProduct}/>
+            <Route exact path ="/detail" component={ProductDetail}/>
+            <Route exact path="/cart" component={Cart}/>
             <Route component={NotFound} />
           </Switch>
         </Router>

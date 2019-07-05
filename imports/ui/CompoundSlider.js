@@ -9,8 +9,10 @@ export function Handle({ // your handle component
     getHandleProps
   }) {
     return (
+                                                               
         <div
             style={{
+                right:140,
                 left: '${percent}%',
                 position: 'absolute',
                 marginLeft: -15,
@@ -39,6 +41,7 @@ export function Handle({ // your handle component
 class CompoundSlider extends Component{
     
     render(){
+      
         const sliderStyle = {  // Give the slider some width
             position: 'relative',
             width: '100%',
@@ -47,6 +50,7 @@ class CompoundSlider extends Component{
           }
           
           const railStyle = { 
+            right: 1,
             position: 'absolute',
             width: '100%',
             height: 3,
@@ -55,6 +59,7 @@ class CompoundSlider extends Component{
             backgroundColor: '#ffc371',
           }
         return(
+          <div className="accordion-item-content">               
             <div>
             <Slider
                 rootStyle={sliderStyle}
@@ -84,6 +89,7 @@ class CompoundSlider extends Component{
                 
             </Slider>
             </div>
+          </div>
         )
     }
 }
