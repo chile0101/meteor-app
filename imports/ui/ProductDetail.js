@@ -58,7 +58,7 @@ class ProductDetail extends Component{
                             <div className="quantity">
                                 <span>Quantity</span>
                                 <button className="reduce"><img src="./plus-black/plus-black.png"/></button>
-                                <input type="text" maxLength="3" value="1" ></input>
+                                <input type="text" maxLength="3" defaultValue="1" ></input>
                                 <button className="add"><img src="./minus-black/minus-black.png"/></button>
                             </div>
                             <button className="addcart-btn"><span>Add to cart</span></button>

@@ -1,5 +1,5 @@
 .outstanding {
-    margin-top: 37px;
+    margin-top: 26px;
     position: relative;
 }
 
@@ -29,7 +29,7 @@
     position: absolute;
     bottom:118px;
     right: 204px;
-
+    border:none;
     width: 170px;
     height: 49px;
     box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.12);
@@ -78,7 +78,7 @@
 .cate-sub button {
     padding: 8px 28px;
     background-color: var(--pale-orange);
-
+    border:none;
     font-family: Montserrat;
     font-size: 14px;
     font-weight: 600;

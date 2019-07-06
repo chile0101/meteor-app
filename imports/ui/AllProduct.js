@@ -1,10 +1,19 @@
 import React,{Component} from 'react'
+import { withTracker } from 'meteor/react-meteor-data'
+import { Meteor } from 'meteor/meteor';
+
+// api
+import {Products} from '../api/products.js'
+
+// components
 import CompoundSlider from './CompoundSlider';
 import BreadCrumb from './Breadcrumb';
 import SizeBox from './SizeBox';
 import ColorBox from './ColorBox'
 import BrandList from './BrandList';
 import AvailabelList from './AvailabelList';
+import ProductCard from './ProductCard'
+
 
 class AllProduct extends Component{
     constructor(props){
@@ -42,7 +51,13 @@ class AllProduct extends Component{
             showAvailable: !this.state.showAvailable,
         })
     }
+    renderProducts(){
+        return this.props.products.map((product)=>(
+            <ProductCard key={product._id} product={product}/>
+        ));
+    }
     render(){
+        
         return(
             <div className="container">
                 <BreadCrumb/>
@@ -151,60 +166,22 @@ class AllProduct extends Component{
 
                     <div className="col-10">
                         <div className="row">
-                            <div className="col">
-                                <div className="product-cart">
-                                    <div className="product-front">
-                                        <img className="product-img" src="./products/p1.jpg"/>
-                                        <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button>
+                           
+                                {this.renderProducts()}
+                                
+                                <div className="col-3">
+                                    <div className="product-cart">
+                                        <div className="product-front">
+                                            <img className="product-img" src="./products/p1.jpg"/>
+                                            {/* <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button> */}
+                                            <label>Sold out</label>
+                                        </div>
+                                        <h5>Collete Stretch Linen Minidress</h5>
+                                        <span>$69.00</span>
                                     </div>
-                                    <h5>Collete Stretch Linen Minidress</h5>
-                                    <span>$69.00</span>
                                 </div>
-                            </div>
-                            <div className="col">
-                                <div className="product-cart">
-                                    <div className="product-front">
-                                        <img className="product-img" src="./products/p1.jpg"/>
-                                        {/* <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button> */}
-                                        <label>Sold out</label>
-                                    </div>
-                                    <h5>Collete Stretch Linen Minidress</h5>
-                                    <span>$69.00</span>
-                                </div>
-                            </div>
-                            <div className="col">
-                                <div className="product-cart">
-                                    <div className="product-front">
-                                        <img className="product-img" src="./products/p1.jpg"/>
-                                        {/* <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button> */}
-                                        <label>Sold out</label>
-                                    </div>
-                                    <h5>Collete Stretch Linen Minidress</h5>
-                                    <span>$69.00</span>
-                                </div>
-                            </div>
-                            <div className="col">
-                                <div className="product-cart">
-                                    <div className="product-front">
-                                        <img className="product-img" src="./products/p1.jpg"/>
-                                        {/* <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button> */}
-                                        <label>Sold out</label>
-                                    </div>
-                                    <h5>Collete Stretch Linen Minidress</h5>
-                                    <span>$69.00</span>
-                                </div>
-                            </div>
-                            <div className="col">
-                                <div className="product-cart">
-                                    <div className="product-front">
-                                        <img className="product-img" src="./products/p1.jpg"/>
-                                        {/* <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button> */}
-                                        <label>Sold out</label>
-                                    </div>
-                                    <h5>Collete Stretch Linen Minidress</h5>
-                                    <span>$69.00</span>
-                                </div>
-                            </div>
+                                
+                          
                             
                         </div>
                     </div>
@@ -226,4 +203,10 @@ class AllProduct extends Component{
 
 }
 
-export default AllProduct 
+export default withTracker(() => {
+    Meteor.subscribe('products');
+
+    return {
+      products: Products.find({}).fetch(),
+    };
+  })(AllProduct);

@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import { Session } from 'meteor/session'
 import { Meteor } from 'meteor/meteor';
+import { BrowserRouter as Router, Route,Switch,Link} from "react-router-dom";
 
 import Login from './Login'
 import Register from './Register'
@@ -99,14 +100,13 @@ class Header extends Component{
                         </div>
 
                         <div className="col-4 Logo">
-                            <a><img src="./logo/logo.png" /></a>
+                            <Link to="/"><img src="./logo/logo.png" /></Link>
                         </div>
 
                         <div className="col-4 text-right">
                             { Meteor.user() ?
                                 <div className="avatar" >
                                     <img src="./profile/profile.jpg" alt="Avatar" className = "avatar-img" onClick={ this.onToggleLogout }></img>
-                                    
                                 </div>  
                                 : 
                                 <div className = "btns-auth">
@@ -161,7 +161,7 @@ class Header extends Component{
                                             onToggleRegister = {this.onToggleRegister}/> : null}
             {this.state.showForgotPass ? <ForgotPassword    onSetStateLogin = { this.onSetStateLogin }  
                                                             onToggleLogin = {this.onToggleLogin}
-                                                            onCancel = {this.onToggleLogin} /> : null}
+                                                            onCancel = {this.onToggleForgotPass} /> : null}
 
            
             </div>
