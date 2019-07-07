@@ -52,12 +52,13 @@ class AllProduct extends Component{
         })
     }
     renderProducts(){
-        return this.props.products.map((product)=>(
-            <ProductCard key={product._id} product={product}/>
-        ));
+        //console.log(this.props.products)
+        return this.props.products.map((product,index) =>(
+            <ProductCard key={index} product ={product}/>
+        ))
     }
     render(){
-        
+       // console.log(this.props.products)
         return(
             <div className="container">
                 <BreadCrumb/>
@@ -165,26 +166,13 @@ class AllProduct extends Component{
                     </div>
 
                     <div className="col-10">
-                        <div className="row">
+                            <div className="row">
                            
                                 {this.renderProducts()}
-                                
-                                <div className="col-3">
-                                    <div className="product-cart">
-                                        <div className="product-front">
-                                            <img className="product-img" src="./products/p1.jpg"/>
-                                            {/* <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button> */}
-                                            <label>Sold out</label>
-                                        </div>
-                                        <h5>Collete Stretch Linen Minidress</h5>
-                                        <span>$69.00</span>
-                                    </div>
-                                </div>
-                                
                           
-                            
+                            </div>
                         </div>
-                    </div>
+                   
                 </div>
                 <div className="row">
                 <div className="col text-right">
@@ -204,8 +192,7 @@ class AllProduct extends Component{
 }
 
 export default withTracker(() => {
-    Meteor.subscribe('products');
-
+    Meteor.subscribe('products')
     return {
       products: Products.find({}).fetch(),
     };

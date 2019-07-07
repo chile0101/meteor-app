@@ -7,7 +7,7 @@ class Footer extends Component{
         <div className="container">
             <div className="row">
                 <div className="col-3">
-                    <a><img src="./logo/logo.png" /></a>
+                    <a><img src="/logo/logo.png" /></a>
                 </div>
                 <div className="col-6">
                 <div className="footer-menu">
@@ -23,9 +23,9 @@ class Footer extends Component{
                 </div>
                 <div className="col-3 text-right">
                 <div>
-                    <a><img src="./twitter-grey/twitter-grey.png" /></a>
-                    <a><img src="./facebook-icon/facebook-icon.png" /></a>
-                    <a><img src="./instagram-6-icon/instagram-6-icon.png" /></a>
+                    <a><img src="/twitter-grey/twitter-grey.png" /></a>
+                    <a><img src="/facebook-icon/facebook-icon.png" /></a>
+                    <a><img src="/instagram-6-icon/instagram-6-icon.png" /></a>
                 </div>
                 </div>
             </div>

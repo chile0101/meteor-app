@@ -92,7 +92,7 @@ class Header extends Component{
                                 <div className="col-6">
                                     <form className="search-form">
                                         <input type="text" placeholder="Search.." name="search" />
-                                        <button type="submit" className="btn-search"><img src="./search/search.png" /></button>
+                                        <button type="submit" className="btn-search"><img src="/search/search.png" /></button>
                                     </form>
                                 </div>
                                 <div className="col-6" />
@@ -100,13 +100,13 @@ class Header extends Component{
                         </div>
 
                         <div className="col-4 Logo">
-                            <Link to="/"><img src="./logo/logo.png" /></Link>
+                            <Link to="/"><img src="/logo/logo.png" /></Link>
                         </div>
 
                         <div className="col-4 text-right">
                             { Meteor.user() ?
                                 <div className="avatar" >
-                                    <img src="./profile/profile.jpg" alt="Avatar" className = "avatar-img" onClick={ this.onToggleLogout }></img>
+                                    <img src="/profile/profile.jpg" alt="Avatar" className = "avatar-img" onClick={ this.onToggleLogout }></img>
                                 </div>  
                                 : 
                                 <div className = "btns-auth">
@@ -115,7 +115,7 @@ class Header extends Component{
                                 </div>
                             }                                                  
                             <div className="cart" onClick={this.onToggleViewCart}>
-                                <a href="#"><img src="./cart/cart.png"/></a>
+                                <a href="#"><img src="/cart/cart.png"/></a>
                                 <div className="Oval">7</div>
                             </div>
                         </div>
@@ -128,22 +128,22 @@ class Header extends Component{
                 <ul>
                     <li >
                         <span>Men</span>
-                        <a><img src="./arrow-black/arrow-black.png" /></a>
+                        <a><img src="/arrow-black/arrow-black.png" /></a>
                         <SubCate/>
                     </li>
                     <li>
                         <span>Ladies</span>
-                        <a><img src="./arrow-black/arrow-black.png" /></a>
+                        <a><img src="/arrow-black/arrow-black.png" /></a>
                         <SubCate/>
                     </li>
                     <li>
                         <span>Girl</span>
-                        <a><img src="./arrow-black/arrow-black.png" /></a>
+                        <a><img src="/arrow-black/arrow-black.png" /></a>
                         <SubCate/>
                     </li>
                     <li>
                         <span>Boy</span>
-                        <a><img src="./arrow-black/arrow-black.png" /></a>
+                        <a><img src="/arrow-black/arrow-black.png" /></a>
                         <SubCate/>
                     </li>
                 </ul>     

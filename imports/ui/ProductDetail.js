@@ -1,7 +1,13 @@
 import React,{Component} from 'react'
+import { Session } from 'meteor/session'
 
 class ProductDetail extends Component{
+   
     render(){
+    
+        if(this.props.ready){
+            const product = this.props.product
+            
         return(
             <div className="container">
                 <div className="bread-crumb">
@@ -15,29 +21,29 @@ class ProductDetail extends Component{
                     <div className="col-1">
                         <div className="img-thumb">
                             <ul>
-                                <li><img src ="./products/img1.webp"/></li>
-                                <li><img src ="./products/img2.webp"/></li>
-                                <li><img src ="./products/img3.webp"/></li>
-                                <li><img src ="./products/img4.webp"/></li>
+                                <li><img src ="/products/img1.webp"/></li>
+                                <li><img src ="/products/img2.webp"/></li>
+                                <li><img src ="/products/img3.webp"/></li>
+                                <li><img src ="/products/img4.webp"/></li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="img-show">
-                            <img src= "./products/product.webp"/>
+                            <img  src = {product.img[0]} />
                         </div>
                     </div>
                     <div className="col-5">
                         <div className="product-options">
-                            <p>Collete Stretch Linen Minidress</p>
-                            <p>$69.00</p>
+                            <p>{product.name}</p>
+                            <p>${product.price}</p>
                             <div className="reviews-detail">
                                 <ul>
-                                    <li><img src="./star/star.png"/></li>
-                                    <li><img src="./star/star.png"/></li>
-                                    <li><img src="./star/star.png"/></li>
-                                    <li><img src="./star/star.png"/></li>
-                                    <li><img src="./star/star.png"/></li>
+                                    <li><img src="/star/star.png"/></li>
+                                    <li><img src="/star/star.png"/></li>
+                                    <li><img src="/star/star.png"/></li>
+                                    <li><img src="/star/star.png"/></li>
+                                    <li><img src="/star/star.png"/></li>
                                 </ul>
                                 <span>0 Review</span>
                             </div>
@@ -57,9 +63,9 @@ class ProductDetail extends Component{
                             </div>
                             <div className="quantity">
                                 <span>Quantity</span>
-                                <button className="reduce"><img src="./plus-black/plus-black.png"/></button>
+                                <button className="reduce"><img src="/plus-black/plus-black.png"/></button>
                                 <input type="text" maxLength="3" defaultValue="1" ></input>
-                                <button className="add"><img src="./minus-black/minus-black.png"/></button>
+                                <button className="add"><img src="/minus-black/minus-black.png"/></button>
                             </div>
                             <button className="addcart-btn"><span>Add to cart</span></button>
                             <hr/>
@@ -78,10 +84,10 @@ class ProductDetail extends Component{
                             <p>Zara</p>
                             <div className="img-thumb-cp">
                                 <ul>
-                                    <li><img src ="./products/img1.webp"/></li>
-                                    <li><img src ="./products/img2.webp"/></li>
-                                    <li><img src ="./products/img3.webp"/></li>
-                                    <li><img src ="./products/img4.webp"/></li>
+                                    <li><img src ="/products/img1.webp"/></li>
+                                    <li><img src ="/products/img2.webp"/></li>
+                                    <li><img src ="/products/img3.webp"/></li>
+                                    <li><img src ="/products/img4.webp"/></li>
                                 </ul>
                             </div>
                         </div>
@@ -118,11 +124,11 @@ class ProductDetail extends Component{
                                     <p>Rating for us:</p>
                                     <div className="star-review-in-form">
                                         <ul>
-                                            <li><img src="./star-active/star-active.png"/></li>
-                                            <li><img src="./star-active/star-active.png"/></li>
-                                            <li><img src="./star-active/star-active.png"/></li>
-                                            <li><img src="./star-active/star-active.png"/></li>
-                                            <li><img src="./star/star.png"/></li>
+                                            <li><img src="/star-active/star-active.png"/></li>
+                                            <li><img src="/star-active/star-active.png"/></li>
+                                            <li><img src="/star-active/star-active.png"/></li>
+                                            <li><img src="/star-active/star-active.png"/></li>
+                                            <li><img src="/star/star.png"/></li>
                                         </ul>
                                     </div>
                                     <button type="submit"><span>Submit</span></button>
@@ -143,11 +149,11 @@ class ProductDetail extends Component{
                         <div className="col-9">
                             <div className="star-review">
                                 <ul>
-                                    <li><img src="./star-active/star-active.png"/></li>
-                                    <li><img src="./star-active/star-active.png"/></li>
-                                    <li><img src="./star-active/star-active.png"/></li>
-                                    <li><img src="./star-active/star-active.png"/></li>
-                                    <li><img src="./star/star.png"/></li>
+                                    <li><img src="/star-active/star-active.png"/></li>
+                                    <li><img src="/star-active/star-active.png"/></li>
+                                    <li><img src="/star-active/star-active.png"/></li>
+                                    <li><img src="/star-active/star-active.png"/></li>
+                                    <li><img src="/star/star.png"/></li>
                                 </ul>
                             </div>
                         </div>
@@ -165,11 +171,11 @@ class ProductDetail extends Component{
                                 <span>Adorable but tight!!</span>
                                 <div className="star-review">
                                     <ul>
-                                        <li><img src="./star-active/star-active.png"/></li>
-                                        <li><img src="./star-active/star-active.png"/></li>
-                                        <li><img src="./star-active/star-active.png"/></li>
-                                        <li><img src="./star-active/star-active.png"/></li>
-                                        <li><img src="./star/star.png"/></li>
+                                        <li><img src="/star-active/star-active.png"/></li>
+                                        <li><img src="/star-active/star-active.png"/></li>
+                                        <li><img src="/star-active/star-active.png"/></li>
+                                        <li><img src="/star-active/star-active.png"/></li>
+                                        <li><img src="/star/star.png"/></li>
                                     </ul>
                                 </div>
                                 <p>I purchased this dress thinking it fit loose as pictured, but it fits like a glove, 
@@ -181,9 +187,9 @@ class ProductDetail extends Component{
                     <div className="row text-right">
                         <div className="col">
                             <div className="paginationn">
-                                <button><img src="./arrow-black/arrow-black.png"/></button>
+                                <button><img src="/arrow-black/arrow-black.png"/></button>
                                 <span>1/7</span>
-                                <button><img src="./arrow-black/arrow-black.png"/></button>
+                                <button><img src="/arrow-black/arrow-black.png"/></button>
                             </div>
                         </div>
                             
@@ -206,25 +212,25 @@ class ProductDetail extends Component{
                         <div className="row">
                             <div className="col-3">
                                 <div className="product-refer">
-                                    <img src='./products/p1.jpg'/>
+                                    <img src='/products/p1.jpg'/>
                                     <p>Collete Stretch Linen Minidress</p>
                                 </div>
                             </div>
                             <div className="col-3">
                                 <div className="product-refer">
-                                    <img src='./products/p1.jpg'/>
+                                    <img src='/products/p1.jpg'/>
                                     <p>Collete Stretch Linen Minidress</p>
                                 </div>
                             </div>
                             <div className="col-3">
                                 <div className="product-refer">
-                                    <img src='./products/p1.jpg'/>
+                                    <img src='/products/p1.jpg'/>
                                     <p>Collete Stretch Linen Minidress</p>
                                 </div>
                             </div>
                             <div className="col-3">
                                 <div className="product-refer">
-                                    <img src='./products/p1.jpg'/>
+                                    <img src='/products/p1.jpg'/>
                                     <p>Collete Stretch Linen Minidress</p>
                                 </div>
                             </div>
@@ -235,6 +241,12 @@ class ProductDetail extends Component{
 
             </div>
         )
+
+        }else{
+            return(
+                <h2>Product not found</h2>
+            )
+        }
     }
 
 }
