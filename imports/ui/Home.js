@@ -11,7 +11,7 @@ class Home extends Component{
                 <div className="row">
                     <div className="col-12">
                         <div className="outstanding">
-                            <img src="./slider/slider-final.PNG" />
+                            <img src="/slider/slider-final.PNG" />
                             {/* <h2>OUTFIT OF THE WEEK</h2> */}
                             <Link to="/products"><button >Shop Now</button></Link>
                         </div>
@@ -21,7 +21,7 @@ class Home extends Component{
                     <div className="col-3">
                         <div className="cate">
                             <Link to="/products">
-                                <img src="./products/p1.jpg" />
+                                <img src="/products/p1.jpg" />
                                 <div className="cate-sub ">
                                     <p>Men</p>
                                     <hr />
@@ -33,7 +33,7 @@ class Home extends Component{
                     <div className="col-3">
                         <div className="cate">
                             <Link to="/products">
-                                <img src="./products/p2.jpg" />
+                                <img src="/products/p2.jpg" />
                                 <div className="cate-sub ">
                                     <p>Ladies</p>
                                     <hr />
@@ -45,7 +45,7 @@ class Home extends Component{
                     <div className="col-3">
                         <div className="cate">
                             <Link to="/products">
-                                <img src="./products/p3.jpg" />
+                                <img src="/products/p3.jpg" />
                                 <div className="cate-sub ">
                                     <p>Girl</p>
                                     <hr />
@@ -57,7 +57,7 @@ class Home extends Component{
                     <div className="col-3">
                         <div className="cate">
                             <Link to="/products">
-                                <img src="./products/p4.jpg" />
+                                <img src="/products/p4.jpg" />
                                 <div className="cate-sub ">
                                     <p>Boy</p>
                                     <hr />

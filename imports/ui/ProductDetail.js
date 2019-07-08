@@ -5,7 +5,7 @@ class ProductDetail extends Component{
    
     render(){
     
-        if(this.props.ready){
+        if(this.props.productExists){
             const product = this.props.product
             
         return(
@@ -21,10 +21,10 @@ class ProductDetail extends Component{
                     <div className="col-1">
                         <div className="img-thumb">
                             <ul>
-                                <li><img src ="/products/img1.webp"/></li>
-                                <li><img src ="/products/img2.webp"/></li>
-                                <li><img src ="/products/img3.webp"/></li>
-                                <li><img src ="/products/img4.webp"/></li>
+                                <li><img src = {product.img[1] } /></li>
+                                <li><img src = {product.img[2] } /></li>
+                                <li><img src = {product.img[3] } /></li>
+                                <li><img src = {product.img[4] }/></li>
                             </ul>
                         </div>
                     </div>

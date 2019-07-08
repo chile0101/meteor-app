@@ -1,6 +1,13 @@
 import assert from "assert";
 
+import Register from '../imports/ui/Register'
+
+
+
 describe("meteor-app", function () {
+
+
+
   it("package.json has correct name", async function () {
     const { name } = await import("../package.json");
     assert.strictEqual(name, "meteor-app");
@@ -18,3 +25,5 @@ describe("meteor-app", function () {
     });
   }
 });
+
+

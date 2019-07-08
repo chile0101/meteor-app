@@ -6,7 +6,7 @@ class ViewCart extends Component{
                 <div className="view-cart">
                     <ul>    
                         <li>
-                            <img src="./products/img1.webp"/>
+                            <img src="/products/img1.webp"/>
                             <div className="view-cart-content">
                                 <p>New Balance Men's Street Backpack</p>
                                 <span>$485</span>
@@ -16,7 +16,7 @@ class ViewCart extends Component{
                             </div>  
                         </li>
                         <li>
-                            <img src="./products/img1.webp"/>
+                            <img src="/products/img1.webp"/>
                             <div className="view-cart-content">
                                 <p>New Balance Men's Street Backpack</p>
                                 <span>$485</span>

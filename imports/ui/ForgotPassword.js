@@ -26,7 +26,7 @@ class ForgotPassword extends Component{
         const {email} = this.state
         return(
             <div className="auth">
-                <button className="btn-cancel" onClick={this.props.onCancel}><img src="./cancel-grey/cancel-grey.png"/></button>
+                <button className="btn-cancel" onClick={this.props.onCancel}><img src="/cancel-grey/cancel-grey.png"/></button>
                 <h2 className="text-center">Forgot Password</h2>
                 <p className="text-center">Enter your e-mail address below and we'll get you back on track</p>
                 <form className="auth-form" onSubmit = { this.handleSubmit }>

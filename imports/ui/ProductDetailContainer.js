@@ -15,11 +15,13 @@ export default withTracker(({match}) => {
 
     const ready = productSub.ready();
     const product = Products.findOne(id);
-    
-    const listExists = ready && product;
+    const productExists = ready && product;
+
     return {
         ready,
-        product: listExists ? product : [],
+        product,
+        productExists,
+        product: productExists ? product : [],
     };
     
     //if(productsSub.ready()){

@@ -53,7 +53,7 @@ class Login extends Component{
         const {email,password,error} = this.state
         return(
             <div className="auth">
-                <button className="btn-cancel" onClick={this.props.onCancel}><img src="./cancel-grey/cancel-grey.png"/></button>
+                <button className="btn-cancel" onClick={this.props.onCancel}><img src="/cancel-grey/cancel-grey.png"/></button>
                 <h2 className="text-center">Login</h2>
                 <p className="text-center text-danger">{error}</p>
                 <form className="auth-form" onSubmit = { this.handleSubmit }>

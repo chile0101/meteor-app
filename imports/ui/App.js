@@ -3,37 +3,28 @@ import { withTracker } from 'meteor/react-meteor-data'
 import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
 
 //------------------API------------------------
-import {Products} from '../api/products.js'
 
 //----------------Component--------------------
-import Header from './Header'
-import Home from './Home'
-import AllProduct from './AllProduct'
-import ProductDetail from './ProductDetail'
-import ProductDetailContainer from './ProductDetailContainer'
-import Cart from './Cart'
-import Footer from './Footer'
-import NotFound from './pages/NotFound'
+import ClientRouter from './ClientRouter'
+import AdLogin from './admin/AdLogin'
+import Databoard from './admin/Databoard'
+
+
+
 
 class App extends Component{
  
   render(){
     return( 
-      <div>
-        <Router>
-          <Header></Header>
-          <Switch>
-            <Route exact  path = "/" component={Home} products={this.props.products} />
-            <Route exact  path = "/detail" component={ProductDetail}/>
-            <Route exact  path = "/products/:id" component ={ProductDetailContainer}/>
-            <Route exact  path = "/products" component={AllProduct}/>
-            
-            <Route path="/cart" component={Cart}/>
-            <Route component={NotFound} />
+      
+        <Router> 
+          <Switch>    
+            <Route exact  path = "/admin/" component ={AdLogin} />
+            <Route exact  path = "/admin/databoard" component ={Databoard} />    
+            <Route exact  path = "" component={ClientRouter}  />   
           </Switch>
-          <Footer></Footer>
         </Router>
-      </div>
+     
     )
   }
 }

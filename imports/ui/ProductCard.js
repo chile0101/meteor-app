@@ -11,7 +11,7 @@ class ProductCard extends Component{
                     <Link to ={'/products/'+ id} >
                         <div className="product-front">
                             <img className="product-img" src = {product.img[0]}/>
-                            <button><img src="./plus-white/plus-white.png"/><span>Quick shop</span></button>
+                            <button><img src="/plus-white/plus-white.png"/><span>Quick shop</span></button>
                             {/* <label>Sold out</label> */}
                         </div>
                         <h5>{this.props.product.name}</h5>

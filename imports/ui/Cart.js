@@ -19,7 +19,7 @@ class Cart extends Component{
                                 <tr>
                                     <td >
                                         <div className="product-detail-selected">
-                                            <img src="./products/img1.webp"/>
+                                            <img src="/products/img1.webp"/>
                                             <p>Collete Stretch Linen Minidress</p>
                                             <div className="change-remove-btn">
                                                 <span>Change</span><span>Remove</span>   
@@ -34,9 +34,9 @@ class Cart extends Component{
                                     </td>
                                     <td className="text-center">
                                         <div className="quantity-selected">
-                                            <button className="reduce"><img src="./plus-black/plus-black.png"/></button>
+                                            <button className="reduce"><img src="/plus-black/plus-black.png"/></button>
                                             <input type="text" maxLength="3" value="1" ></input>
-                                            <button className="add"><img src="./minus-black/minus-black.png"/></button>
+                                            <button className="add"><img src="/minus-black/minus-black.png"/></button>
                                         </div>
                                     </td>
                                     <td className="text-center">   
@@ -46,7 +46,7 @@ class Cart extends Component{
                                 <tr>
                                     <td >
                                         <div className="product-detail-selected">
-                                            <img src="./products/img1.webp"/>
+                                            <img src="/products/img1.webp"/>
                                             <p>Collete Stretch Linen Minidress</p>
                                             <div className="change-remove-btn">
                                                 <span>Change</span><span>Remove</span>   
@@ -61,9 +61,9 @@ class Cart extends Component{
                                     </td>
                                     <td className="text-center">
                                         <div className="quantity-selected">
-                                            <button className="reduce"><img src="./plus-black/plus-black.png"/></button>
+                                            <button className="reduce"><img src="/plus-black/plus-black.png"/></button>
                                             <input type="text" maxLength="3" value="1" ></input>
-                                            <button className="add"><img src="./minus-black/minus-black.png"/></button>
+                                            <button className="add"><img src="/minus-black/minus-black.png"/></button>
                                         </div>
                                     </td>
                                     <td className="text-center">   

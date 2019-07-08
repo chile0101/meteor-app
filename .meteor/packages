@@ -25,3 +25,4 @@ accounts-password
 
 session
 fourseven:scss
+meteortesting:mocha

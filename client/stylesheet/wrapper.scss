@@ -794,3 +794,156 @@ $item-selected: #f1f1f1;
         }
     }
 }
+
+// ------------------------------ADMIN-----------------------------------
+
+.logo{
+    margin-top: 32px;
+    margin-left: 44px;
+    z-index: 9999;
+}
+.bg-login{
+    // background: url('/bg/rectangle-5.png');
+    background-color: red;
+    //position: relative;
+
+    .form-wrapper{
+
+        position: fixed;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 2px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.08);
+        background-color: rgba(61, 61, 63, 0.8);
+        text-align: center;
+        padding: 32px;
+        h5{
+            @include base-style($font-size: 28px,
+                    $font-weight:bold,
+                    $line-height:1.29,
+                    $color: $pale-orange);
+        }
+        a{
+            @include base-style($font-size: 12px,
+                    $font-weight:600,
+                    $line-height:normal,
+                    $color: $white);
+        }
+        form{
+            
+            text-align: left;
+            label{
+                margin-top: 20px;
+                display: block;
+                @include base-style($font-size: 12px,
+                    $font-weight:600,
+                    $line-height:1.5,
+                    $color: $greyish);
+            }
+            input{
+                display: block;
+                margin-top: 8px;
+                margin-bottom: 20px;
+                padding: 14px 16px;
+                border: none;
+                @include base-style($font-size: 14px,
+                    $font-weight: 500,
+                    $line-height:1.43,
+                    $color: $greyish);
+                width: 316px;
+                height: 48px;
+                border-radius: 2px;
+                border: solid 1px var(--white-three);
+                background-color: var(--white);
+            }
+            button{
+                display: block;
+                margin: 40px auto;
+                border: none;
+                border-radius: 2px;
+                background-color: $pale-orange;
+                @include base-style($font-size: 14px,
+                        $font-weight: 600,
+                        $line-height:1.73,
+                        $color: $white);
+                width: 316px;
+                height: 48px;
+              
+              
+                
+            }
+        }
+       
+    }
+}
+
+
+.databoard{
+    background-color: $white-two;
+}
+.wrapper-menu{
+    float: left;
+    width: 20%;
+    padding: 0px;
+    background-color: $white-two;
+    .board-menu{
+        margin-top:44.5px;
+
+        ul{
+            list-style-type: none;
+            margin:0px;
+            padding:0px;
+        }
+        li{
+            padding:12px 20px;
+            img{
+                margin-right: 20px;
+            }
+            span{
+                @include base-style($font-size: 14px,
+                        $font-weight: 500,
+                        $line-height:1.43,
+                        $color: $charcoal-grey);
+            }
+            &:hover{
+                span{
+                    color: $pale-orange;
+                }
+            }
+        }
+    }
+}
+
+.wrapper-content{
+    float:left;
+    width: 80%;
+   
+
+    .info-bar{
+        margin-top: 28px;
+        h4{
+            display:inline;
+            @include base-style($font-size: 24px,
+                        $font-weight: bold,
+                        $line-height:1.29,
+                        $color: $dark-grey);
+        }
+        img{
+            width: 48px;
+            height: 48px;
+            box-shadow: 0 5px 20px 0 rgba(61, 61, 63, 0.2);
+            border: solid 2px var(--white);
+            border-radius: 50%;
+        }
+        span{
+            @include base-style($font-size: 14px,
+                        $font-weight: bold,
+                        $line-height:1.71,
+                        $color: $dark-grey);
+        }
+    }
+
+}

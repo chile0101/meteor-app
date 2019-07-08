@@ -70,7 +70,7 @@ class Register extends Component{
                 email: email,
                 password: password,
                 profile: {
-                    img: './profile/profile.jpg'
+                    img: '/profile/profile.jpg'
                 }
                 }, err => {
                     if(err){
@@ -99,7 +99,7 @@ class Register extends Component{
         const {usernameErr,emailErr,passErr} = this.state
         return(
             <div className="auth">
-                <button className="btn-cancel" onClick={this.props.onCancel}><img src="./cancel-grey/cancel-grey.png"/></button>
+                <button className="btn-cancel" onClick={this.props.onCancel}><img src="/cancel-grey/cancel-grey.png"/></button>
                 <h2 className="text-center">Register</h2>
                 <form className="auth-form" onSubmit = { this.handleSubmit }>
                     <div className="form-group">
