@@ -5,25 +5,16 @@ import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
 //------------------API------------------------
 
 //----------------Component--------------------
-import ClientRouter from './ClientRouter'
-import AdLogin from './admin/AdLogin'
-import Databoard from './admin/Databoard'
 
-
+import AdLogin from '../pages/AdLoginPage'
+import Databoard from './AdProducts'
 
 
 class App extends Component{
  
   render(){
     return( 
-      
-        <Router> 
-          <Switch>    
-            <Route exact  path = "/admin/" component ={AdLogin} />
-            <Route exact  path = "/admin/databoard" component ={Databoard} />    
-            <Route exact  path = "" component={ClientRouter}  />   
-          </Switch>
-        </Router>
+        <div ></div>
      
     )
   }

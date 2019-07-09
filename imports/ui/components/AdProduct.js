@@ -1,45 +1,9 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
-class Databoard extends Component{
+class AdProduct extends Component{
     render(){
         return(
-            
-            <div className = "databoard">
-                <div className="wrapper-menu">
-                    <div className = "logo">
-                        <img src="/logo/logo.png"/>
-                    </div>
-
-                    <div className="board-menu">
-                        <ul>
-                            <li>
-                                <img src = "/overview-dark/overview-dark.png"/>
-                                <span>Overview</span>
-                            </li>
-                            <li>
-                                <img src = "/orders-dark/orders-dark.png"/>
-                                <span>Orders</span>
-                            </li>
-                            <li>
-                                <img src = "/products-dark/products-dark.png"/>
-                                <span>Products</span>
-                            </li>
-                            <li>
-                                <img src = "/payment-dark/payment-dark.png"/>
-                                <span>Payments</span>
-                            </li>
-                            <li>
-                                <img src = "/promotion-dark/promotion-dark.png"/>
-                                <span>Promotions</span>
-                            </li>
-                            <li>
-                                <img src = "/setting-dark/setting-dark.png"/>
-                                <span>Setting</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="wrapper-content">
+            <div className="wrapper-content">
                     <div className="info-bar">
                         <h4 className="tab-name">Products</h4>
                         <div className="float-right">
@@ -102,6 +66,7 @@ class Databoard extends Component{
 
                     
                     <table className="table-wrapper">
+                    <tbody>
                         <tr>
                             <th>ORDER ID</th>
                             <th>ORDERED DATE</th>
@@ -115,34 +80,98 @@ class Databoard extends Component{
                             <td>Collete Stretch Linen Minidress (M) x 1</td>
                             <td>60.00</td>
                             <td>
-                                <button>Completed</button>
+                                <button className="status-label">Completed</button>
                             </td>
                             <td>
-                                <div className="action-option">
+                                <div className="action-dropdown">
                                     <span>Action</span>
                                     <img src="/dropdown/dropdown.png"/>
-                                    {/* <ul>
+                                    <ul>
                                         <li>
-    
+                                            <div className="action-oval-green"></div>
                                             <span>Mark as Completed</span>
                                         </li>
                                         <li>
-                                            
+                                            <div className="action-oval-red"></div>
                                             <span>Mark as Canceled</span>
                                         </li>
-                                    </ul> */}
+                                    </ul>
                                 </div>
                             </td>
                         </tr>
+                        <tr>
+                            <td>AB12345</td>
+                            <td>Today,8th,2019</td>
+                            <td>Collete Stretch Linen Minidress (M) x 1</td>
+                            <td>60.00</td>
+                            <td>
+                                <button className="status-label">Completed</button>
+                            </td>
+                            <td>
+                                <div className="action-dropdown">
+                                    <span>Action</span>
+                                    <img src="/dropdown/dropdown.png"/>
+                                    <ul>
+                                        <li>
+                                            <div className="action-oval-green"></div>
+                                            <span>Mark as Completed</span>
+                                        </li>
+                                        <li>
+                                            <div className="action-oval-red"></div>
+                                            <span>Mark as Canceled</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>AB12345</td>
+                            <td>Today,8th,2019</td>
+                            <td>Collete Stretch Linen Minidress (M) x 1</td>
+                            <td>60.00</td>
+                            <td>
+                                <button className="status-label">Completed</button>
+                            </td>
+                            <td>
+                                <div className="action-dropdown">
+                                    <span>Action</span>
+                                    <img src="/dropdown/dropdown.png"/>
+                                    <ul>
+                                        <li>
+                                            <div className="action-oval-green"></div>
+                                            <span>Mark as Completed</span>
+                                        </li>
+                                        <li>
+                                            <div className="action-oval-red"></div>
+                                            <span>Mark as Canceled</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>    
                     </table>
                    
+                   <div className="panigation-wrapper">
+                       <span>Show 1 to 10 of 123 entries</span>
+                       <div className="float-right">
+                           <ul>
+                               <li><img src="/pagination/first-page.png"/></li>
+                               <li><img src="/pagination/prev.png"/></li>
+                               <li className="page-current">1</li>
+                               <li>2</li>
+                               <li>3</li>
+                               <li>4</li>
+                               <li>5</li>
+                               <li><img src="/pagination/next.png"/></li>
+                               <li><img src="/pagination/last-page.png"/></li>
+                           </ul>
+                       </div>
+                   </div>
                     
-                </div>
-             
             </div>
-
         )
     }
 }
 
-export default Databoard
+export default AdProduct

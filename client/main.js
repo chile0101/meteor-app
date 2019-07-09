@@ -1,17 +1,17 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
-import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
+import Routes from '../imports/startup/client/routes'
 
+// import App from '../imports/ui/App.js';
 
-import App from '../imports/ui/App.js';
-
+import { BrowserRouter} from 'react-router-dom';
 
 
 Meteor.startup(() => {
   
   render((
-   <App/>
+    <Routes/>
   ), document.getElementById('render-target'));
   
 });

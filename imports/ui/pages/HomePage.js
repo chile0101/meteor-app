@@ -1,12 +1,15 @@
 import React,{Component} from 'react'
-import { BrowserRouter as Router, Route,Switch,Link,Redirect } from "react-router-dom";
-import AllProduct from './AllProduct';
+import { Link } from "react-router-dom";
 
-class Home extends Component{
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+
+class HomePage extends Component{
     render(){
         
         return(
-            
+        <div>
+            <Header/>
             <div className="container">
                 <div className="row">
                     <div className="col-12">
@@ -68,11 +71,11 @@ class Home extends Component{
                     </div>
                 </div>
             </div>
-
-            
+            <Footer/>
+        </div> 
             
         )
     }
 }
 
-export default Home
+export default HomePage

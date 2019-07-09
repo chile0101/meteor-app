@@ -2,14 +2,14 @@ import React,{Component} from 'react'
 import { withTracker } from 'meteor/react-meteor-data'
 
 // conponent
-import ProductDetail from './ProductDetail'
+import ProductDetail from '../pages/ProductDetail'
 // api
-import {Products} from '../api/products.js'
+import {Products} from '../../api/products'
 
 export default withTracker(({match}) => {
 
     const id = match.params.id
-    //console.log(id)
+    console.log(id)
 
     const productSub = Meteor.subscribe('products')
 
@@ -23,16 +23,7 @@ export default withTracker(({match}) => {
         productExists,
         product: productExists ? product : [],
     };
-    
-    //if(productsSub.ready()){
-            // return {
-            //     product: Products.find({_id: id}).fetch(),
-            // }
-    //}else{
-    //     return {
-    //         product: [],
-    //     }
-    // }
+
   })(ProductDetail);
 
 
